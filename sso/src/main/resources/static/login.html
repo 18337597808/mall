@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery.js"></script>
+    <script>
+        function login() {
+            //异步提交数据
+            $.get("login2",$("#login").serialize (),function (d) {
+               location.href=d;
+            });
+        }
+    </script>
+</head>
+<body>
+<!--
+采用Flex布局的元素，称为Flex容器（flex container），简称"容器"。
+它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称"项目"。
+justify-content　　项目在主轴上的对齐方式
+align-items　　项目在交叉轴上如何对齐
+
+-->
+<div style="height: 650px;display: flex;justify-content: center;flex-flow:column;align-items: center">
+    <form id="login" class="form-group">
+        <div style="margin-bottom: 20px" class="input-group">
+            <span class="input-group-addon">账号</span>
+            <input id="account" name="account" class="form-control" placeholder="请输入账号"/>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">密码</span>
+            <input id="pwd" name="pwd" type="password" class="form-control"/>
+        </div>
+    </form>
+        <div>
+            <button class="btn btn-success btn-block" onclick="login()" >登录</button>
+        </div>
+</div>
+</body>
+</html>
