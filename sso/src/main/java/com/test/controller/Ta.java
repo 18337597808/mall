@@ -8,4 +8,8 @@ public class Ta {
     public int jian(int x,int y){
         return  x-y;
     }
+
+    public int  cheng(int x,int y){
+        return x*y;
+    }
 }
